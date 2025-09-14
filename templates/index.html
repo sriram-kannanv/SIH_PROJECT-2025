@@ -37,15 +37,45 @@
             border-radius: 10px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             text-align: center;
+            width: 300px;
+        }
+        .logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #e6f2ff; /* light blue circle */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 20px auto;
+            overflow: hidden;
+        }
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
     </style>
 </head>
 <body>
     <div>
+        <!-- Logo container -->
+        <div class="logo" id="profileLogo">
+            <img id="profilePic" src="https://img.icons8.com/ios-filled/100/004080/user.png" alt="User Icon">
+        </div>
         <h2>Login Page</h2>
-        <a href="/login">Login with Google</a>
+        <a href="#" onclick="handleLogin()">Login with Google</a>
     </div>
+
+    <script>
+        // Simulated Google Login (replace with actual Google OAuth integration)
+        function handleLogin() {
+            // Normally, you'd use Google's API response here
+            const mockProfilePhoto = "https://lh3.googleusercontent.com/a-/AOh14Gh..."; // Example Google photo URL
+
+            // Replace the icon with the Google profile photo
+            document.getElementById("profilePic").src = mockProfilePhoto;
+        }
+    </script>
 </body>
 </html>
-
-
