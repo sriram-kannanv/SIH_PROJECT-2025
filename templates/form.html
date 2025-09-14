@@ -2,19 +2,76 @@
 <html>
 <head>
     <title>Details Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff; /* light blue-white background */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        h2 {
+            color: #004080; /* dark blue */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form {
+            background-color: white;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            width: 320px;
+        }
+        input {
+            width: 100%;
+            padding: 8px 10px;
+            margin: 8px 0;
+            border: 1px solid #007BFF;
+            border-radius: 6px;
+            outline: none;
+            box-sizing: border-box;
+        }
+        input:focus {
+            border-color: #0056b3;
+            box-shadow: 0 0 5px rgba(0,91,187,0.5);
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 12px;
+            background-color: #007BFF;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        br {
+            display: none; /* hide line breaks for cleaner form look */
+        }
+    </style>
 </head>
 <body>
-    <h2>Enter Your Details</h2>
-    <form method="post">
-        Name: <input type="text" name="name" required><br>
-        Aadhaar: <input type="text" name="adhaar" required><br>
-        DOB: <input type="date" name="dob" required><br>
-        Gender: <input type="text" name="gender" required><br>
-        Mobile: <input type="text" name="mobile" required><br>
-        Username: <input type="text" name="username" required><br>
-        New Password: <input type="password" name="password" required><br>
-        Gmail: <input type="text" value="{{ gmail }}" readonly><br>
-        <button type="submit">Submit</button>
-    </form>
+    <div>
+        <h2>Enter Your Details</h2>
+        <form method="post">
+            Name: <input type="text" name="name" required><br>
+            Aadhaar: <input type="text" name="adhaar" required><br>
+            DOB: <input type="date" name="dob" required><br>
+            Gender: <input type="text" name="gender" required><br>
+            Mobile: <input type="text" name="mobile" required><br>
+            Username: <input type="text" name="username" required><br>
+            New Password: <input type="password" name="password" required><br>
+            Gmail: <input type="text" value="{{ gmail }}" readonly><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 </body>
 </html>
