@@ -1,10 +1,67 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dashboard</title>
+    <title>Dashboard</title>
 </head>
 <body>
-    <h2>Welcome, {{ name }}</h2>
-    <p>You are successfully logged in.</p>
+    <h2>Welcome, {{ name }}</h2>
+    <p>You are successfully logged in.</p>
 </body>
+<script>document.addEventListener('DOMContentLoaded', (event) => {
+    // Check if the browser supports geolocation
+    if (navigator.geolocation) {
+        // Use getCurrentPosition to get the user's location
+        navigator.geolocation.getCurrentPosition(
+            function(position) {
+                const latitude = position.coords.latitude;
+                const longitude = position.coords.longitude;
+                // Send the location data to the Flask backend
+                fetch('/update_location', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        latitude: latitude,
+                        longitude: longitude
+                    }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Location updated successfully:', data);
+                    // You can update the UI here with the new safety score if needed
+                    if (data.safety_score) {
+                        document.getElementById('safety-score').innerText = data.safety_score;
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error updating location:', error);
+                });
+            },
+            // Error callback function
+            function(error) {
+                console.warn('ERROR(' + error.code + '): ' + error.message);
+                // Handle various error codes, like user denying permission
+                switch(error.code) {
+                    case error.PERMISSION_DENIED:
+                        console.log("User denied the request for Geolocation.");
+                        break;
+                    case error.POSITION_UNAVAILABLE:
+                        console.log("Location information is unavailable.");
+                        break;
+                    case error.TIMEOUT:
+                        console.log("The request to get user location timed out.");
+                        break;
+                    default:
+                        console.log("An unknown error occurred.");
+                        break;
+                }
+            }
+        );
+    } else {
+        // Geolocation is not supported by this browser
+        console.log("Geolocation is not supported by your browser.");
+    }
+});</script>
+
 </html>
