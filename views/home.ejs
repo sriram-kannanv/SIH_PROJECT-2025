@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAHO</title>
+    <link rel="stylesheet" href="/public/homestyle.css">
+</head>
+<body>
+<nav class="navbar">
+  <!-- Logo -->
+  <div class="logo">
+    <img src="/public/images/logoSaho.png" alt="SAHO Logo" class="logo-img">
+    <span class="brand-text">SAHO</span>
+  </div>
+
+  <!-- Hamburger Menu -->
+  <label for="menu-toggle" class="menu-icon">☰</label>
+  <input type="checkbox" id="menu-toggle">
+
+  <!-- Nav Links -->
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+
+    <!-- Dropdown -->
+    <li class="dropdown">
+      <a href="#">Language ▾</a>
+      <ul class="dropdown-menu">
+        <li><a href="#">English</a></li>
+        <li><a href="#">Spanish</a></li>
+        <li><a href="#">French</a></li>
+        <li><a href="#">German</a></li>
+      </ul>
+    </li>
+
+    <!-- Search Bar -->
+    <li class="search-bar">
+      <input type="text" placeholder="Search...">
+      <button>🔍</button>
+    </li>
+
+    <!-- Login -->
+    <li class="login">
+      <a href="#"><span class="profile-icon">👤</span></a>
+    </li>
+  </ul>
+</nav>
+
+<section class="hero">
+    <div class="hero-content">
+      <h1>Need Help Now??</h1>
+      <p>Feeling unsafe or Lost? Tap here—we will guide you to safety</p>
+      <a href="/views/help.ejs" class="hero-btn">Help!!</a>
+    </div>
+</section>
+
+</body>
+</html>
