@@ -1,0 +1,290 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #BBFBFF;
+  color: #333;
+}
+
+.logo-img {
+  height: 40px;   /* adjust as needed */
+  width: auto;
+  object-fit: contain; /* keeps aspect ratio */
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Navbar */
+.navbar {
+  background: linear-gradient(90deg, #4E71FF, #8DD8FF);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-text {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.sun-icon {
+  animation: spin 4s linear infinite;
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  list-style: none; 
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+  transform: scale(1.05);
+}
+
+/* Hamburger */
+.menu-icon {
+  display: none;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    background: #ff7a5a;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    display: none;
+    padding: 20px;
+  }
+
+  #menu-toggle:checked + .nav-links {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #4aa3d9;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.dropdown-menu li {
+  padding: 5px 20px;
+}
+
+.dropdown-menu li a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-menu li a:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.search-bar input {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+.search-bar button {
+  background: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 8px;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background: #f1f1f1;
+}
+
+/* Login */
+.login a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.login a:hover {
+  text-decoration: underline;
+}
+
+.login-icon {
+  font-size: 1.2rem;
+}
+
+/* Mobile Fix for new items */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+  }
+
+  .search-bar {
+    width: 100%;
+  }
+
+  .search-bar input {
+    flex: 1;
+  }
+}
+
+/* Login/Profile Icon */
+.login a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;           /* circle size */
+  height: 40px;
+  background: #fff;      /* white background */
+  color: #ff7a5a;        /* icon color */
+  border-radius: 50%;    /* makes it round */
+  text-decoration: none;
+  font-size: 1.2rem;     /* icon size */
+  transition: all 0.3s ease;
+}
+
+.login a:hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: scale(1.05);
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: #f9fbfd; /* soft background */
+  color: #222;
+}
+
+.header {
+  background-color: #4aa3d9; /* brighter blue */
+  padding: 25px;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  margin: 30px 0;
+  font-size: 18px;
+  color: #555;
+  font-style: italic;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+  color: #222;
+  font-size: 22px;
+  font-weight: 500;
+  background: white;
+  padding: 20px 30px;
+  border-radius: 12px;
+  width: 350px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+.option img {
+  width: 70px;
+  height: 70px;
+}
+
+.option:hover {
+  transform: translateY(-5px);
+  background: #e6f4ff;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  color: #0073e6;
+}
